@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Architecture logicielle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Et si on parlait de qualité de code</h1>
+  <p>
+    Dans cet article, j'aimerai partager mes réflexions sur l'architecture logicielle et les bonnes pratiques concernant
+    le développement logiciel. Il est évident que ce sujet est vaste, complexe, et l'expérience est un facteur clé pour
+    progresser. Avec ces quelques paragraphes, j'espère présenter un axe de lecture qui vous aidera à y voir plus clair,
+    au moins sur ma vision de la conception logicielle.
+  </p>
+  <p>
+    Comme tout principe d'architecture ou de qualité de code, le contexte est primordial. Il n'existe pas de solution
+    universelle mais un ensemble de concepts qui fournit une base solide de réflexion. Ces réflexions nous aident à
+    <b>faire des compromis</b> pour concevoir une architecture répondant à nos besoins. Ces concepts sont un mélange
+    d'expérience et de la lecture de livres que vous pouvez retrouver dans la
+
+    <a href="/bibliographie.html">bibliographie</a>.
+  </p>
+
+  <h2>La qualité de code</h2>
+  <p>
+    Il n'est pas évident de donner une définition de la qualité de code. On peut considérer qu'un code de qualité est un
+    code qui nous fait gagner du temps. La difficulté est alors d'estimer le coût positif ou négatif de chaque
+    implémentation puis de <b>faire des compromis</b>. À partir de cette définition, un logiciel bien conçu est donc
+    rapide (facile) à maintenir, corriger et faire évoluer.
+  </p>
+  <p>
+    <i>Michael C. Feathers</i>, dans son livre <i>Working effectively with legacy code</i>, considère
+    tout code non couvert par des tests unitaires comme du code legacy, c'est-à-dire, ralentissant l'évolution du
+    logiciel. On peut alors considérer qu'un code couvert par des tests unitaires est un code de qualité car il sera
+    facile de le modifier pour l'améliorer.
+  </p>
+
+  <h2>Le code</h2>
+  <p>
+    On passe plus de temps à lire du code qu'à en écrire. Lors de l'implémentation d'une fonctionnalité, on lit et relit
+    le code qu'on écrit. Ce même code sera relu par d'autres développeurs ou nous-mêmes encore et encore au fur et à
+    mesure des évolutions du logiciel. Le temps pris pour écrire un code est donc un investissement qui s'avère très
+    rentable. Le refactoring, changer le code sans changer son comportement, est une activité essentielle pour
+    améliorer la qualité du code, et donc, augmenter la vitesse de développement.
+  </p>
+
+  <h2>Les bonnes pratiques</h2>
+  <p>
+    Toutes les bonnes pratiques ont donc comme but de nous faire gagner du temps en nous faisant lire moins de code. Ces
+    bonnes pratiques sont trop nombreuses pour en faire une liste exhaustive. Je vais en choisir quelques-unes afin
+    d'étayer ma réflexion.
+  </p>
+  <p>
+    Commençons avec la taille de nos fonctions. Une fonction courte est plus facile à nommer qu'une fonction de 100
+    lignes, ou du moins, son nom sera plus pertinent. Une fonction nommée `jeFaisTout()` nous donne très peu
+    d'information sur le rôle de la fonction et nous oblige à lire son implémentation. Bien nommer une fonction évite
+    donc de lire son implémentation pour comprendre son rôle. En construisant des classes et des fonctions courtes, les
+    éléments de notre logiciel sont mieux nommés. Il est alors plus facile de trouver l'élément à modifier pour corriger
+    un bug ou ajouter une fonctionnalité. L'analogie avec le livre est intéressante. Pour trouver une information dans
+    un livre, on parcourt la table des matières puis on regarde les titres des sections du chapitre. Ainsi, on évite de
+    lire tout le livre pour trouver l'information.
+  </p>
+  <p>
+    Une autre information importante sur une fonction ou une classe est la définition de ses entrées et sorties. Les
+    paramètres d'une fonction ou les attributs d'une classe nous informent sur les éléments utilisés pour effectuer une
+    opération. Si je passe tout un objet en entrée, je m'attends à ce que l'opération utilise une grande partie de cet
+    objet. Si je passe un seul attribut, l'information est plus précise. Je n'ai plus besoin de lire l'implémentation
+    pour savoir quelles sont les informations nécessaires à l'opération. De plus, je sais que l'opération ne modifie pas
+    les propriétés de l'objet. Les sorties sont utilisées pour retourner le résultat d'une opération. Si une fonction
+    retourne un objet, on s'attend à ce que les paramètres d'entrée ne soient pas modifiés (si c'est le cas, il y a
+    probablement une violation du principe de responsabilité unique). La programmation fonctionnelle utilise beaucoup ce
+    principe. Une fonction pure est une fonction qui ne modifie pas ses entrées et retourne toujours le même résultat
+    pour les mêmes entrées. Ces fonctions sont alors faciles à comprendre et à tester.
+  </p>
+  <p>
+    Une définition précise des entrées et des sorties identifie clairement les dépendances entre les éléments. Lorsqu'un
+    objet est passé en entrée d'une suite d'opérations, une modification de cet objet entraînera potentiellement une
+    modification de toutes les opérations qui l'utilisent. Il faudra alors lire les implémentations pour mesurer le coût
+    réel de cette modification. Dans ce cas, avoir précisément défini les entrées peut nous faire gagner beaucoup de
+    temps. De la même façon, ne pas supprimer une entrée non utilisée nous fait perdre du temps.
+  </p>
+  <p>
+    Limiter le nombre d'entrées d'une fonction ou d'une classe est aussi une bonne pratique car elle facilite la
+    compréhension de l'élément et réduit le nombre de dépendances. Plus les éléments ont de dépendances, plus il est
+    difficile de les modifier. En effet, une modification peut entraîner des modifications en cascade et augmenter
+    considérablement le temps d'ajout ou de correction d'une fonctionnalité. Pour modifier un élément, il faudra au
+    préalable étudier les modifications à apporter à ses dépendances, puis aux dépendances de ses dépendances, et ainsi
+    de suite.
+  </p>
+  <img src="logiciel_dependances.png" />
+  <p>
+    Dans le schéma ci-dessus (un peu caricatural, peut-être ?), le système de droite semble plus facile à modifier car
+    on peut facilement remplacer un élément sans affecter les autres. Avoir des éléments avec peu de dépendances réduit
+    donc le temps d'analyse et donc le temps de modification. D'après mon expérience, il est plus facile d'avoir peu de
+    dépendances avec des éléments de petite taille ce qui nous ramène au début de cette section.
+  </p>
+  <h2>Les tests</h2>
+  <p>
+    De mon point de vue, les tests unitaires permettent de garantir la qualité du code. Ils nous font gagner du temps en
+    réduisant les risques d'introduire des erreurs lors de la modification du code existant. De plus, ils documentent
+    le code (1) en montrant comment utiliser une fonction ou une classe et (2) en précisant les cas d'utilisation qui
+    ont été pris en compte. Que les tests soient écrits pendant ou après l'implémentation, ils sont un investissement
+    extrêmement rentable sur le long terme, non pas pour vérifier qu'une fonctionnalité est correctement implémentée
+    mais pour garantir qu'elle restera bien implémentée.
+  </p>
+  <p>
+    Les tests unitaires ont pour objectif de tester le comportement interne du logiciel. Les intéractions avec les
+    autres logiciels (base de données, services web, système de fichiers, etc.) sont simulées afin d'isoler notre
+    système, de pouvoir maîtriser les entrées des tests et de pouvoir exécuter de nombreux tests très rapidement. Les
+    objets dépendants d'éléments extérieurs au système doivent être situés en périphérie du système afin de pouvoir
+    tester le comportement du système plus facilement. Certains de ses objets peuvent ne pas être couverts par des
+    tests.
+  </p>
+  <p>
+    Tous les codes ne sont pas égaux face aux tests. Comme l'écriture de tests n'est pas optionnelle, la testabilité du
+    code fait partie du cahier des charges au même titre que la fonctionnalité à implémenter. Le code doit être conçu
+    pour être testé. Écrire du code testable s'apprend. Les principes évoqués dans la section précédente participent à
+    cet objectif.
+  </p>
+  <p>
+    Tester correctement une fonction qui exécute de nombreuses opérations est difficile. On sera alors obligé
+    de multiplier les tests afin d'avoir une bonne couverture des opérations réalisées. L'écriture des tests sera
+    fastidieuse (surtout s'ils sont écrits après l'implémentation) et les tests seront longs à lire car trop nombreux.
+  </p>
+  <p>
+    Tester une fonction qui a de nombreuses dépendances est compliqué car il faudra simuler les dépendances pour isoler
+    la fonction à tester. De plus, si ces dépendances ont elles-mêmes de nombreuses dépendances, on se retrouve avec un
+    arbre de dépendances qu'il faudra simuler, voire simuler une grande partie du système. Notre simulateur devra
+    prendre en compte la moindre modification du système, les tests deviendront rapidement trop longs à écrire, on
+    n'écrira plus de tests, les évolutions provoqueront des récessions, etc. Bref, un désastre.
+  </p>
+  <h2>Conclusion</h2>
+  <p>
+    J'espère que ces quelques lignes vous donneront envie de vous intéresser à la qualité de code et à l'architecture
+    logicielle. Écrire du code durable, maintenable et testable est une réflexion permanente et passionnante qui mêle
+    technique, expérience et compromis.
+  </p>
+</body>
+
+</html>

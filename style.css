@@ -1,0 +1,11 @@
+body {
+  font-family: 'Fira Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  margin: 2em;
+  background: #fff;
+  color: #222;
+}
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 1em;
+}
