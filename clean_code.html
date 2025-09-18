@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Architecture logicielle</title>
+  <title>Qualité de code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>Et si on parlait de qualité de code</h1>
+  <h1>Qualité de code</h1>
   <p>
     Dans cet article, j'aimerai partager mes réflexions sur l'architecture logicielle et les bonnes pratiques concernant
     le développement logiciel. Il est évident que ce sujet est vaste, complexe, et l'expérience est un facteur clé pour
@@ -91,7 +91,7 @@
     préalable étudier les modifications à apporter à ses dépendances, puis aux dépendances de ses dépendances, et ainsi
     de suite.
   </p>
-  <img src="logiciel_dependances.png" />
+  <img src="resources/logiciel_dependances.png" />
   <p>
     Dans le schéma ci-dessus (un peu caricatural, peut-être ?), le système de droite semble plus facile à modifier car
     on peut facilement remplacer un élément sans affecter les autres. Avoir des éléments avec peu de dépendances réduit
@@ -112,14 +112,17 @@
     autres logiciels (base de données, services web, système de fichiers, etc.) sont simulées afin d'isoler notre
     système, de pouvoir maîtriser les entrées des tests et de pouvoir exécuter de nombreux tests très rapidement. Les
     objets dépendants d'éléments extérieurs au système doivent être situés en périphérie du système afin de pouvoir
-    tester le comportement du système plus facilement. Certains de ses objets peuvent ne pas être couverts par des
-    tests.
+    tester le comportement du système plus facilement. Certains de ses objets périphériques peuvent ne pas être couverts
+    par des tests. L'exemple le plus courant est probablement l'objet responsable de l'intéraction avec une API externe.
+    Cet objet sert essentiellement de pont entre notre système et l'API. Pour le tester, il faudrait simuler l'API
+    externe en important dans notre système des contrats venant de l'extérieur, ce qui, par définitiion, n'est pas
+    réaliste. En dehors de ces objets périphériques, le code doit être couvert par des tests unitaires.
   </p>
   <p>
-    Tous les codes ne sont pas égaux face aux tests. Comme l'écriture de tests n'est pas optionnelle, la testabilité du
-    code fait partie du cahier des charges au même titre que la fonctionnalité à implémenter. Le code doit être conçu
-    pour être testé. Écrire du code testable s'apprend. Les principes évoqués dans la section précédente participent à
-    cet objectif.
+    Tous les codes ne sont pas égaux face aux tests. Comme l'écriture de tests n'est pas optionnelle, la testabilité
+    d'un composant fait partie du cahier des charges au même titre que la fonctionnalité à implémenter. Le code doit
+    être conçu pour être testé. Écrire du code testable s'apprend. Les principes évoqués dans la section précédente
+    participent à cet objectif, voici quelques exemples.
   </p>
   <p>
     Tester correctement une fonction qui exécute de nombreuses opérations est difficile. On sera alors obligé
@@ -130,7 +133,7 @@
     Tester une fonction qui a de nombreuses dépendances est compliqué car il faudra simuler les dépendances pour isoler
     la fonction à tester. De plus, si ces dépendances ont elles-mêmes de nombreuses dépendances, on se retrouve avec un
     arbre de dépendances qu'il faudra simuler, voire simuler une grande partie du système. Notre simulateur devra
-    prendre en compte la moindre modification du système, les tests deviendront rapidement trop longs à écrire, on
+    prendre en compte la moindre modification du système, les tests deviendront rapidement trop longs à maintenir, on
     n'écrira plus de tests, les évolutions provoqueront des récessions, etc. Bref, un désastre.
   </p>
   <h2>Conclusion</h2>
