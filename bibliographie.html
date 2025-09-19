@@ -15,9 +15,11 @@
     ouvrages couvrent divers aspects du développement, de la conception à la gestion de projet, en passant par les
     bonnes pratiques de codage.
   </p>
-  <i>Les livres avec des titres en anglais sont écrits en anglais.</i>
-
-  Sommaire
+  <p>
+    <i>Les livres avec des titres en anglais sont écrits en anglais.</i>
+  </p>
+  <p>
+    Sommaire
   <ul>
     <li><a href="#premiers-livres">Les premiers livres à lire</a></li>
     <li><a href="#apres-experiences">À lire après quelques expériences en développement</a></li>
@@ -25,6 +27,7 @@
     <li><a href="#hors-sentiers">Pour sortir des sentiers battus du développement logiciel</a></li>
     <li><a href="#apprendre-programmation">Pour apprendre la programmation</a></li>
   </ul>
+  </p>
 
   <h2 id="premiers-livres">Les premiers livres à lire</h2>
 
@@ -55,8 +58,15 @@
     n'est mon préféré. À mettre entre toutes les mains.
   </p>
   <p>
-    Un épisode de l'excellent podcast IFTTD sur un retour d'expérience de l'utilisation du TDD : <a
-      href="https://www.infoq.com/fr/podcasts/tdd-retour-experience/">https://www.infoq.com/fr/podcasts/tdd-retour-experience/</a>
+    Un épisode de l'excellent podcast "Artisan Développeur" sur un retour d'expérience de l'utilisation du TDD :
+  <ul>
+    <li>
+      <a href="https://open.spotify.com/episode/6xpIkjYNgxGHTlAz8mjJ7v" target="_blank">Spotify</a>
+    </li>
+    <li>
+      <a href="https://artisandeveloppeur.fr/podcast/" target="_blank">Artisan Développeur</a>
+    </li>
+  </ul>
   </p>
 
   <strong>Refactoring, Comment améliorer le code existant</strong> par Martin Fowler<br />
@@ -79,7 +89,26 @@
     livres plus abordables. J'ai trouvé ce livre très complet et bien structuré, avec des exemples concrets.
   </p>
 
+  <strong>The Pragmatic Programmer</strong> par David Thomas and Andrew Hunt
+  <p>
+    Ce livre aborde de très nombreux aspects de la vie d'un développeur. De l'état d'esprit à adopter à certaines bonnes
+    pratiques de codage, comme DRY ou l'orthogonalité, en passant par la boite à outils à maitriser. Les chapitres sont
+    indépendants et peuvent être lus au gré des envies. J'ai apprécié le style informel et la variété des sujets
+    traités. Chaque concept est traité en quelques pages. Par conséquent, on ne rentre pas dans les détails ce qui donne
+    envie d'aller plus loin sur les sujets qui nous intéressent.
+  </p>
+
   <h2 id="apres-experiences">À lire après quelques expériences en développement</h2>
+
+  <strong>Architecture logicielle propre</strong> par Robert C. Martin
+  <p>
+    Un livre sur l'architecture logicielle qui est la structure globale d'un logiciel. Il présente les principes
+    SOLID, les couches d'architecture, les styles architecturaux et les bonnes pratiques pour concevoir une architecture
+    robuste et évolutive. J'ai apprécié le style direct et pragmatique de l'auteur qui partage son expérience avec des
+    exemples concrets. Le livre est un peu plus théorique que les autres livres de cette liste mais les explications
+    sont claires et permettent de comprendre les enjeux de l'architecture logicielle.
+  </p>
+
   <strong>Design Patterns, Elements of Reusable Object-Oriented Software</strong> par Erich Gamma, Richard Helm, Ralph
   Johnson, John Vlissides
   <p>
@@ -90,40 +119,82 @@
     compromis. Même si on ne souhaite pas utiliser les patrons de conception, le livre est une mine d'or pour comprendre
     les principes de la conception orientée objet.
   </p>
-  <strong>The Pragmatic Programmer</strong> par David Thomas and Andrew Hunt
-  <p>
-  </p>
-  <strong>eXtreme Programming, La référence</strong> par Kent Beck
-  <p>
-  </p>
-  <strong>Architecture logicielle propre</strong> par Robert C. Martin
-  <p>
-  </p>
+
   <strong>Working Effectively with Legacy Code</strong> par Michael C. Feathers
   <p>
+    Le livre donne de nombreuses techniques pour améliorer du code existant en mauvais état, souvent appelé code legacy.
+    Le code legacy peut avoir plusieurs conséquences néfastes : difficulté d'ajout de nouvelles fonctionnalités, bugs
+    fréquents, difficulté de compréhension du code, etc. L'objectif est l'amélioration de ce code afin d'éviter le très
+    (trop ?) couteux : "il faut tout réécrire". Basé sur de nombreux exemples concrets, le livre explique comment
+    identifier les parties du code qui posent problème, comment les isoler et comment les améliorer. De très nombreuses
+    techniques visent à pouvoir écrire des tests unitaires sur du code qui n'a pas été conçu pour cela. Ensuite, le code
+    peut plus facilement être modifié et amélioré. J'ai apprécié le côté très pragmatique du livre et les
+    explications détaillées.
   </p>
+
   <strong>Effective Python, 90 Speficic Ways to Write Better Python</strong> par Brett Slatkin
   <p>
+    Le livre présente des conseils concrets pour écrire du code Python de qualité en utilisant la programmation
+    impérative ou orientée objet. Chaque conseil est illustré par des exemples de code. Plus on avance dans le livre,
+    plus les conseils sont avancés. Comparé au livre "Python Cookbook", un autre livre de référence sur Python, j'ai
+    apprécié la concision du livre et le choix des sujets traités.
   </p>
+
   <h2 id="management">Quelques livres sur le management</h2>
+
+  <strong>eXtreme Programming, La référence</strong> par Kent Beck
+  <p>
+    Ce livre décrit la méthodologie de développement agile nommée eXtreme Programming (XP). Cette méthodologie met
+    l'accent sur des cycles courts avec de très nombreuses versions. On cherche à supprimer les développements superflus
+    en ce concentrant sur le minimum à inclure dans la prochaine version. Les cycles courts permettent d'obtenir des
+    retours fréquents du client sur le produit qui est en cours de développement. La méthode est présentée de manière
+    très pragmatique avec des conseils concrets pour le développeur, le manageur ou la vie d'équipe. La lecture est très
+    agréable.
+  </p>
+
   <strong>La pratique du lean management dans l'IT, Agilité et amélioration continue</strong> par Marie-Pia Ignace,
   Christian Ignace, Régis Medina, Antoine Contal
   <p>
+    Le livre décrit comment appliquer les principes du lean management dans le développement logiciel. Le lean
+    management s'attèle à l'élimination des gaspillages dans les processus en se focalisant sur le rythme de la
+    production afin d'obtenir un flux de valeur continu. Le lean management est apparu chez Toyota, au Japon, dans les
+    années 50. Le livre explique comment appliquer ces principes dans le développement logiciel en s'appuyant sur
+    l'étude de quatre cas concrets. J'ai apprécié le côté très pragmatique du livre qui permet de découvrir une
+    méthodologie et de poser de bonnes questions. Très bon livre pour découvrir le lean management quand on est dans
+    l'IT. Je pense que le livre n'est pas suffisamment détaillé pour être utilisé comme un guide de mise en œuvre.
   </p>
+
   <strong>The Mythical Man-Month</strong> par Frederick P. Brooks, JR.
   <p>
+    Un classique, au sens historique, sur la gestion de projet logiciel. Le livre explique pourquoi les projets
+    logiciels échouent souvent et comment éviter ces pièges. La première croyance à laquelle l'auteur s'attaque est
+    l'homme mois, c'est-à-dire l'idée que l'on peut estimer la durée d'un projet en multipliant le nombre de personnes
+    par le nombre de mois en sous-estimant l'impact de la communication. La première édition date de 1975 !!! L'édition
+    de 1995 est une édition augmentée de 4 chapitres. Certains concepts sont encore d'actualité, d'autres un peu
+    moins. J'ai apprécié le style humoristique de l'auteur, la plongée dans l'histoire et les exemples d'un autre temps.
   </p>
 
   <h2 id="hors-sentiers">Pour sortir des sentiers battus du développement logiciel</h2>
+
   <strong>La programmation fonctionnelle, Introduction et applications en Haskell à l'usage de l'étudiant et du
     développeur</strong> par Julien Dehos
   <p>
+    Un livre pour apprendre la programmation fonctionnelle qui semble avoir de nombreuses qualités. De nombreux
+    principes posent de bonnes questions comme l'immutabilité des données et les fonctions pures. Un livre court qui
+    pose les bases de façon claire. Je n'ai pas encore eu l'occasion de tester ce paradigme de programmation qui change
+    la manière de penser le code. À lire pour s'ouvrir l'esprit et découvrir de nouvelles pistes pour écrire du code
+    plus maintenable.
   </p>
+
   <strong>Machine Learning avec Scikit-Learn, Mise en oeuvre et cas concrets</strong> par Aurélien Géron
   <p>
+    Un livre sur l'apprentissage automatique (machine learning) avec Python. Tous les cas développés sont illustrés avec
+    des exemples de code montrant la puissance de la librairie Scikit-Learn. J'ai apprécié les explications claires qui
+    m'ont permis d'en apprendre beaucoup sur ce sujet.
   </p>
 
   <h2 id="apprendre-programmation">Pour apprendre la programmation</h2>
+
   <strong>Python pour les Kids, la programmation accessible aux enfants</strong> par Jason R. Briggs
   <p>
     Si vous souhaitez apprendre la programmation, ce livre est une excellente introduction. Il est destiné aux enfants
