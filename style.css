@@ -1,7 +1,17 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --text-color: #333;
+  --light-text: #474f50;
+}
+
+
 body {
   font-family: 'Fira Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-image: url(resources/coolbackgrounds-particles-ether.png);
+  background-color: #f3f2f2;
+  line-height: 1.6;
   margin: 2em;
-  background: #fdfdfd;
   color: #222;
 }
 
@@ -11,5 +21,32 @@ h1 {
 }
 
 strong {
-  color: rgb(185, 144, 9);
+  color: #3498db;
+}
+
+.ressource-link {
+  margin: 1.5rem 0;
+}
+
+.ressource-link a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid var(--secondary-color);
+  transition: color 0.3s, border-color 0.3s;
+  padding-bottom: 2px;
+}
+
+.ressource-link a:hover {
+  color: #2c3e50;
+  border-bottom-color: #2c3e50;
+}
+
+.sommaire a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid var(--secondary-color);
+  transition: color 0.3s, border-color 0.3s;
+  padding-bottom: 2px;
 }

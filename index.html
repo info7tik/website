@@ -1,1 +1,234 @@
-Something free and cool!
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rémy Pottier - Développeur Fullstack</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .hero-text {
+      font-size: 1.3rem;
+      color: var(--light-text);
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    .bio {
+      font-size: 1.1rem;
+      color: var(--light-text);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-weight: 300;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #2980b9;
+    }
+
+    section {
+      padding: 3rem 0;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+      color: var(--secondary-color);
+      margin-top: 0;
+    }
+
+    .skills {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .skills-list {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .skill-tag {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .social-links {
+      margin: 1rem 0;
+    }
+
+    .social-links a {
+      color: var(--primary-color);
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    .email {
+      color: var(--secondary-color);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-text {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Rémy Pottier</h1>
+      <p class="hero-text">
+        Vous recherchez un développeur avec une vision produit pour répondre simplement et efficacement à vos besoins et
+        à ceux de vos clients ?
+      </p>
+      <p class="bio">
+        Fort de plus de 10 ans d’expériences très diversifiées, je vous accompagne dans la mise en production de vos
+        projets.
+      </p>
+      <a href="#contact" class="cta-button">Me contacter</a>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="container">
+      <h2>Mes Services</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>Formation & Mentorat</h3>
+          <p>Je vous accompagne dans la montée en compétences de vos équipes ou la votre, sur les technologies modernes
+            et les bonnes pratiques du développement logiciel.</p>
+        </div>
+        <div class="service-card">
+          <h3>Sauvetage de codebase</h3>
+          <p>Votre projet est en difficulté ? Je vous aide à auditer, refactoriser et remettre sur les rails une
+            codebase complexe ou mal structurée.</p>
+        </div>
+        <div class="service-card">
+          <h3>Conseil & Accompagnement</h3>
+          <p>Besoin d’un regard expert sur votre projet ? Je vous conseille sur les choix techniques, l’architecture et
+            la stratégie de développement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Mes Compétences</h2>
+      <div class="skills">
+        <div class="skills-list">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Springboot</span>
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">Angular</span>
+        </div>
+      </div>
+    </div>
+    <center>
+      <div class="ressource-link">
+        <a href="bibliographie.html">
+          Découvrir mes références bibliographiques
+        </a>
+      </div>
+    </center>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Envie de collaborer ou de discuter d’un projet ? N’hésitez pas à me contacter.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/rémy-pottier-2a4638302" target="_blank">LinkedIn</a>
+        <a href="https://github.com/info7tik" target="_blank">GitHub</a>
+      </div>
+      <p>Ou par email : <span class="email" id="email"></span></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Rémy Pottier - Développeur Fullstack</p>
+    </div>
+  </footer>
+
+  <script>
+    const nom = "pottier";
+    const prenom = "remy";
+    const domain = "@mailo.com";
+    document.getElementById('email').textContent = prenom + "." + nom + domain;
+  </script>
+</body>
+
+</html>
